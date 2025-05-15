@@ -1,0 +1,132 @@
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Main container styles */
+.main-container {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Content wrapper styles */
+.content-wrapper {
+  padding-top: 4rem; /* Space for navbar */
+}
+
+/* Animation for page transitions */
+.page-transition {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section transitions */
+#home, #about, #skills, #services, #portfolio, #contact {
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden; /* Added for shape dividers */
+}
+
+/* Shape Dividers */
+.shape-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shape-divider.top {
+  top: 0;
+  bottom: auto;
+  transform: rotate(180deg);
+}
+
+/* Wave Shape */
+.shape-divider.wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 92px;
+}
+
+.shape-divider.wave .shape-fill {
+  fill: var(--bg-color-secondary);
+}
+
+/* Triangle Shape */
+.shape-divider.triangle svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 69px;
+}
+
+.shape-divider.triangle .shape-fill {
+  fill: var(--bg-color-primary);
+}
+
+/* Tilt Shape */
+.shape-divider.tilt svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 50px;
+}
+
+.shape-divider.tilt .shape-fill {
+  fill: var(--bg-color-secondary);
+}
+
+/* Curve Shape */
+.shape-divider.curve svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 70px;
+}
+
+.shape-divider.curve .shape-fill {
+  fill: var(--bg-color-primary);
+}
+
+/* Section dividers (removed old ones) */
+#about::before,
+#services::before,
+#contact::before,
+#skills::before,
+#portfolio::before,
+footer::before {
+  content: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3451d1;
+}
