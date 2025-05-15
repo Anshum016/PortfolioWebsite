@@ -1,7 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+      
+      // Update active section
+      const sections = document.querySelectorAll('section[id]');
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const scrollY = window.scrollY;
+        
+        if (scrollY >= sectionTop - 100 && scrollY < sectionTop + sectionHeight - 100) {
+          setActiveSection(section.getAttribute('id'));
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -21,40 +49,44 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="py-4 px-6 w-full fixed top-0 z-10" style={{ backgroundColor: 'var(--bg-color-primary)', boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)' }}>
+    <nav 
+      className={`py-2 sm:py-3 px-3 sm:px-6 w-full fixed top-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''}`} 
+      style={{ backgroundColor: 'var(--bg-color-primary)', boxShadow: scrolled ? '0 2px 10px rgba(0, 0, 0, 0.2)' : 'none' }}
+    >
       <div className="container mx-auto flex justify-between items-center">
-        <a href="#home" className="text-2xl font-bold" style={{ color: 'white' }}>
+        <a href="#home" className="text-lg sm:text-xl md:text-2xl font-bold" style={{ color: 'white' }}>
           ANSHUM JANI
         </a>
         
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-gray-700"
+          className="md:hidden text-white p-1.5 sm:p-2 rounded-md focus:outline-none"
           onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
         >
           {isMenuOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
           )}
         </button>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex space-x-4 lg:space-x-6">
           {navLinks.map((link, index) => (
             <a 
               key={index}
               href={link.path} 
-              className="transition-colors font-medium relative group"
-              style={{ color: 'white' }}
+              className={`transition-colors font-medium py-2 px-1 relative group ${activeSection === link.path.slice(1) ? 'text-blue-400' : 'text-white'}`}
+              style={{ color: activeSection === link.path.slice(1) ? 'var(--accent-color)' : 'white' }}
             >
               {link.title}
               <span 
-                className="absolute left-0 right-0 bottom-0 h-0.5 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" 
+                className={`absolute left-0 right-0 bottom-0 h-0.5 transform ${activeSection === link.path.slice(1) ? 'scale-x-100' : 'scale-x-0'} transition-transform duration-300 group-hover:scale-x-100`} 
                 style={{ backgroundColor: 'var(--accent-color)' }}
               ></span>
             </a>
@@ -63,27 +95,28 @@ const Navbar = () => {
       </div>
       
       {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden mt-4 px-4" style={{ backgroundColor: 'var(--bg-color-primary)' }}>
-          <div className="flex flex-col space-y-4">
-            {navLinks.map((link, index) => (
-              <a 
-                key={index}
-                href={link.path} 
-                className="transition-colors py-2 font-medium relative group"
-                style={{ color: 'white' }}
-                onClick={closeMenu}
-              >
-                {link.title}
-                <span 
-                  className="absolute left-0 right-0 bottom-0 h-0.5 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" 
-                  style={{ backgroundColor: 'var(--accent-color)' }}
-                ></span>
-              </a>
-            ))}
-          </div>
+      <div 
+        className={`md:hidden mt-1 sm:mt-2 px-3 sm:px-4 overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`} 
+        style={{ backgroundColor: 'var(--bg-color-primary)' }}
+      >
+        <div className="flex flex-col space-y-1 sm:space-y-2 py-2">
+          {navLinks.map((link, index) => (
+            <a 
+              key={index}
+              href={link.path} 
+              className={`transition-colors py-2 pl-2 font-medium relative group border-b border-gray-700 ${activeSection === link.path.slice(1) ? 'text-blue-400' : 'text-white'}`}
+              style={{ color: activeSection === link.path.slice(1) ? 'var(--accent-color)' : 'white' }}
+              onClick={closeMenu}
+            >
+              {link.title}
+              <span 
+                className={`absolute left-0 bottom-0 w-1 h-full transform ${activeSection === link.path.slice(1) ? 'scale-y-100' : 'scale-y-0'} origin-bottom transition-transform duration-300 group-hover:scale-y-100`} 
+                style={{ backgroundColor: 'var(--accent-color)' }}
+              ></span>
+            </a>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   )
 }

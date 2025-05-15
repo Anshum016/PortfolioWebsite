@@ -1,12 +1,18 @@
 /* Global styles */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Increased to better account for navbar on small screens */
+}
+
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
 }
 
 /* Main container styles */
 .main-container {
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* Content wrapper styles */
@@ -35,6 +41,28 @@ html {
   transition: background-color 0.3s ease;
   position: relative;
   overflow: hidden; /* Added for shape dividers */
+  padding-bottom: 50px; /* Space for shape dividers */
+}
+
+/* Apply padding to all sections (except home which is handled individually) */
+#skills, #services, #portfolio, #contact {
+  padding-top: 28px;
+}
+
+@media (min-width: 640px) {
+  #home, #about, #skills, #services, #portfolio, #contact {
+    padding-bottom: 70px;
+  }
+  
+  #skills, #services, #portfolio, #contact {
+    padding-top: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #home, #about, #skills, #services, #portfolio, #contact {
+    padding-bottom: 90px;
+  }
 }
 
 /* Shape Dividers */
@@ -60,7 +88,19 @@ html {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 92px;
+  height: 50px;
+}
+
+@media (min-width: 640px) {
+  .shape-divider.wave svg {
+    height: 70px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shape-divider.wave svg {
+    height: 92px;
+  }
 }
 
 .shape-divider.wave .shape-fill {
@@ -72,7 +112,19 @@ html {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 69px;
+  height: 40px;
+}
+
+@media (min-width: 640px) {
+  .shape-divider.triangle svg {
+    height: 55px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shape-divider.triangle svg {
+    height: 69px;
+  }
 }
 
 .shape-divider.triangle .shape-fill {
@@ -84,7 +136,19 @@ html {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 50px;
+  height: 30px;
+}
+
+@media (min-width: 640px) {
+  .shape-divider.tilt svg {
+    height: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shape-divider.tilt svg {
+    height: 50px;
+  }
 }
 
 .shape-divider.tilt .shape-fill {
@@ -96,7 +160,19 @@ html {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 70px;
+  height: 40px;
+}
+
+@media (min-width: 640px) {
+  .shape-divider.curve svg {
+    height: 55px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shape-divider.curve svg {
+    height: 70px;
+  }
 }
 
 .shape-divider.curve .shape-fill {
@@ -129,4 +205,33 @@ footer::before {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #3451d1;
+}
+
+/* Fix for mobile devices */
+@media (max-width: 640px) {
+  .container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Utility classes for consistent spacing */
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 7rem;
+  }
 }
