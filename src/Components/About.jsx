@@ -9,7 +9,7 @@ const About = () => {
         
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
           <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <div className="rounded-xl w-full max-w-xs mx-auto h-64 sm:h-80 overflow-hidden shadow-lg" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)', borderColor: 'var(--accent-color)', borderWidth: '2px' }}>
+            <div className="rounded-xl w-full max-w-xs mx-auto h-64 sm:h-80 overflow-hidden shadow-lg" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
               {/* About me image */}
               <img 
                 src="/ImageAnshum2.jpg" 
