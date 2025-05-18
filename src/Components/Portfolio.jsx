@@ -36,7 +36,7 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen pt-24 pb-36 px-6">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-4" style={{ color: 'white' }}>Portfolio</h2>
+        <h2 className="text-3xl font-bold text-center mb-4" style={{ color: 'white' }}>Projects</h2>
         <p className="text-center mb-12" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Most recent work</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

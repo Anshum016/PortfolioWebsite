@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { RiPhoneLine, RiMailLine, RiMapPinLine } from 'react-icons/ri'
+import { FaGithub } from 'react-icons/fa'
 
 const Contactme = () => {
   const [formData, setFormData] = useState({
@@ -47,6 +48,12 @@ const Contactme = () => {
       title: 'Location',
       value: 'Vadodara,Gujarat, India',
       icon: <RiMapPinLine className="w-6 h-6" />
+    },
+    {
+      title: 'GitHub',
+      value: 'Anshum016',
+      link: 'https://github.com/Anshum016',
+      icon: <FaGithub className="w-6 h-6" />
     }
   ];
 

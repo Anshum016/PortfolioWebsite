@@ -7,6 +7,7 @@ import Services from './Components/Services'
 import Portfolio from './Components/Portfolio'
 import VideoProjects from './Components/VideoProjects'
 import Contactme from './Components/Contactme'
+import { FaGithub } from 'react-icons/fa'
 import './App.css'
 
 const WaveDivider = ({ fillColor }) => (
@@ -86,9 +87,19 @@ const App = () => {
             <p className="mb-6" style={{ color: 'white' }}>AI/ML & Front-End Developer</p>
             <div className="flex justify-center gap-6 mb-8">
               <a href="#services" className="hover:text-blue-600" style={{ color: 'white' }}>Services</a>
-              <a href="#portfolio" className="hover:text-blue-600" style={{ color: 'white' }}>Portfolio</a>
+              <a href="#portfolio" className="hover:text-blue-600" style={{ color: 'white' }}>Projects</a>
               <a href="#videos" className="hover:text-blue-600" style={{ color: 'white' }}>Videos</a>
               <a href="#contact" className="hover:text-blue-600" style={{ color: 'white' }}>Contact Me</a>
+              <a 
+                href="https://github.com/Anshum016" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 hover:text-blue-600" 
+                style={{ color: 'white' }}
+              >
+                <FaGithub className="w-5 h-5" />
+                GitHub
+              </a>
             </div>
             <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>© Anshum Jani. All rights reserved.</p>
           </div>

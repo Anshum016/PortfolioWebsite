@@ -45,7 +45,7 @@ const Navbar = () => {
     { title: 'About', path: '#about' },
     { title: 'Skills', path: '#skills' },
     { title: 'Services', path: '#services' },
-    { title: 'Portfolio', path: '#portfolio' },
+    { title: 'Projects', path: '#portfolio' },
     { title: 'Videos', path: '#videos' },
     { title: 'Contact Me', path: '#contact' }
   ];

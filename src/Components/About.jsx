@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Lottie from 'lottie-react'
+import { FaGithub } from 'react-icons/fa'
 
 const About = () => {
   const [animationData, setAnimationData] = useState(null);
@@ -65,7 +66,7 @@ const About = () => {
               </div>
             </div>
             
-            <div className="flex justify-center md:justify-start">
+            <div className="flex justify-center md:justify-start gap-4">
               <a 
                 href="/Anshum_Jani_resume.pdf"
                 download="Anshum_Jani_resume.pdf"
@@ -81,6 +82,22 @@ const About = () => {
                 onMouseOut={e => e.currentTarget.style.backgroundColor = 'var(--accent-color)'}
               >
                 Download Resume
+              </a>
+              <a 
+                href="https://github.com/Anshum016"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg transition-colors font-medium"
+                style={{ 
+                  backgroundColor: 'rgba(25, 22, 39, 0.5)', 
+                  color: 'white',
+                  border: '1px solid var(--accent-color)'
+                }}
+                onMouseOver={e => e.currentTarget.style.backgroundColor = 'rgba(67, 97, 238, 0.1)'} 
+                onMouseOut={e => e.currentTarget.style.backgroundColor = 'rgba(25, 22, 39, 0.5)'}
+              >
+                <FaGithub className="w-5 h-5" />
+                GitHub Profile
               </a>
             </div>
           </div>
