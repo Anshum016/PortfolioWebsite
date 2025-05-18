@@ -1,42 +1,54 @@
 import React, { useState } from 'react'
+import { FaRobot, FaCode, FaBrain, FaPalette } from 'react-icons/fa'
 
 const Services = () => {
   const [activeModal, setActiveModal] = useState(null);
   
-  const servicesList = [
+  const services = [
     {
       id: 1,
-      title: 'Web Developer',
-      icon: '💻',
+      title: 'AI/ML Development',
+      icon: <FaRobot />,
       details: [
-        'I develop web applications with end to end solutions for frontend and backend',
-        'I handle website deployment',
-        'I optimize website performance',
-        'I help in website SEO optimization'
+        'Developing AI/ML models using TensorFlow and PyTorch',
+        'Implementing Computer Vision and NLP solutions',
+        'Building AI Agents and RAG pipelines',
+        'Working with Vector Databases and LLMs'
       ]
     },
     {
       id: 2,
-      title: 'UI/UX Designer',
-      icon: '🎨',
+      title: 'Full Stack Development',
+      icon: <FaCode />,
       details: [
-        'I design user interfaces',
-        'I create user experience flows',
-        'I develop wireframes and prototypes',
-        'I implement responsive designs'
+        'Building responsive web applications with React.js',
+        'Developing backend services using Node.js and Flask',
+        'Implementing RESTful APIs and database solutions',
+        'Creating user-friendly interfaces with Tailwind CSS'
       ]
     },
     {
       id: 3,
-      title: 'Hybrid App Developer',
-      icon: '📱',
+      title: 'AI Research',
+      icon: <FaBrain />,
       details: [
-        'I develop hybrid mobile apps',
-        'I create apps for mobile and tablets',
-        'I handle cross platform compatibility',
-        'I optimize application performances'
+        'Research in AI Agents and Neural Networks',
+        'Implementing advanced AI techniques',
+        'Working with Generative AI models',
+        'Developing custom AI solutions'
       ]
     },
+    {
+      id: 4,
+      title: 'UI/UX Design',
+      icon: <FaPalette />,
+      details: [
+        'Creating intuitive user interfaces',
+        'Designing responsive layouts',
+        'Implementing modern design principles',
+        'Using tools like Figma and Photoshop'
+      ]
+    }
   ];
 
   const openModal = (id) => {
@@ -54,7 +66,7 @@ const Services = () => {
         <p className="text-center mb-12" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>What I offer</p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {servicesList.map((service) => (
+          {services.map((service) => (
             <div key={service.id} className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center text-center" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
               <div className="text-4xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-4" style={{ color: 'white' }}>{service.title}</h3>

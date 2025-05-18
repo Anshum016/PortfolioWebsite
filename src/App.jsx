@@ -5,6 +5,7 @@ import About from './Components/About'
 import Skills from './Components/Skills'
 import Services from './Components/Services'
 import Portfolio from './Components/Portfolio'
+import VideoProjects from './Components/VideoProjects'
 import Contactme from './Components/Contactme'
 import './App.css'
 
@@ -54,6 +55,16 @@ const App = () => {
           <About />
           <TriangleDivider fillColor="var(--bg-color-primary)" />
         </section>
+
+        <section id="portfolio" className="relative">
+          <Portfolio />
+          <WaveDivider fillColor="var(--bg-color-secondary)" />
+        </section>
+
+        <section id="videos" className="relative">
+          <VideoProjects />
+          <TriangleDivider fillColor="var(--bg-color-primary)" />
+        </section>
         
         <section id="skills" className="relative">
           <Skills />
@@ -65,11 +76,6 @@ const App = () => {
           <CurveDivider fillColor="var(--bg-color-primary)" />
         </section>
         
-        <section id="portfolio" className="relative">
-          <Portfolio />
-          <WaveDivider fillColor="var(--bg-color-secondary)" />
-        </section>
-        
         <section id="contact" className="relative">
           <Contactme />
         </section>
@@ -77,10 +83,11 @@ const App = () => {
         <footer className="relative py-8 text-center" style={{ backgroundColor: 'var(--bg-color-primary)' }}>
           <div className="container mx-auto px-6">
             <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--accent-color)' }}>Anshum</h2>
-            <p className="mb-6" style={{ color: 'white' }}>Web Developer</p>
+            <p className="mb-6" style={{ color: 'white' }}>AI/ML & Front-End Developer</p>
             <div className="flex justify-center gap-6 mb-8">
               <a href="#services" className="hover:text-blue-600" style={{ color: 'white' }}>Services</a>
               <a href="#portfolio" className="hover:text-blue-600" style={{ color: 'white' }}>Portfolio</a>
+              <a href="#videos" className="hover:text-blue-600" style={{ color: 'white' }}>Videos</a>
               <a href="#contact" className="hover:text-blue-600" style={{ color: 'white' }}>Contact Me</a>
             </div>
             <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>© Anshum Jani. All rights reserved.</p>

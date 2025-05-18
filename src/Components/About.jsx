@@ -1,51 +1,67 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Lottie from 'lottie-react'
 
 const About = () => {
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    fetch('/Animation - 1747588653449.json')
+      .then(response => response.json())
+      .then(data => setAnimationData(data))
+      .catch(error => console.error('Error loading animation:', error));
+  }, []);
+
+  if (!animationData) {
+    return null; // or a loading spinner
+  }
+
   return (
     <div className="min-h-screen pt-28 pb-24 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-4" style={{ color: 'white' }}>About Me</h2>
         <p className="text-center mb-8 sm:mb-12" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>My Introduction</p>
         
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
-          <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <div className="rounded-xl w-full max-w-xs mx-auto h-64 sm:h-80 overflow-hidden shadow-lg" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
-              {/* About me image */}
-              <img 
-                src="/ImageAnshum2.jpg" 
-                alt="Anshum Jani" 
-                className="w-full h-full object-cover object-center"
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20">
+          <div className="w-full md:w-1/3 mb-12 md:mb-0">
+            <div className="rounded-xl w-full max-w-xs mx-auto h-64 sm:h-80 overflow-hidden shadow-lg flex items-center justify-center" 
+              style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}
+            >
+              <Lottie 
+                animationData={animationData}
+                loop={true}
+                style={{ width: '100%', height: '100%' }}
               />
             </div>
           </div>
           
           <div className="w-full md:w-2/3">
             <p className="mb-4 sm:mb-6 text-sm sm:text-base" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
-              I have 5 years of experience and a deep understanding of various web technologies such 
-              as HTML, CSS, JavaScript, React, Node.js, and MongoDB.
+              I am a B.Tech Computer Science student at Parul University, passionate about AI/ML and web development. 
+              Currently working as an AI/ML Intern at Tinkering Hub, where I focus on developing projects involving 
+              AI Agents, CNNs, Generative AI, and NLP.
             </p>
             <p className="mb-4 sm:mb-6 text-sm sm:text-base" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
-              I am dedicated to keeping up with the latest trends and techniques in web development, 
-              and I am constantly learning and expanding my skill set. I have a keen eye for detail 
-              and strive for perfection in every project I work on.
+              My expertise spans across Computer Vision, NLP, and Full Stack Development. I have hands-on experience 
+              with frameworks like TensorFlow, PyTorch, React.js, and Node.js, and I'm skilled in implementing 
+              advanced AI techniques including RAG, Vector Databases, and AI Agents.
             </p>
             <p className="mb-6 sm:mb-8 text-sm sm:text-base" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
-              When I'm not coding, I enjoy exploring new technologies and working on side projects. 
-              I am a sports enthusiast and enjoy playing basketball regularly.
+              When I'm not coding, I enjoy exploring new AI/ML technologies, contributing to open-source projects, 
+              and staying updated with the latest developments in the field of artificial intelligence.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
               <div className="text-center p-3 sm:p-4 shadow-md rounded-lg" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
-                <h3 className="text-xl sm:text-2xl font-bold" style={{ color: 'var(--accent-color)' }}>5+</h3>
-                <p className="text-sm sm:text-base" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Years experience</p>
-              </div>
-              <div className="text-center p-3 sm:p-4 shadow-md rounded-lg" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
-                <h3 className="text-xl sm:text-2xl font-bold" style={{ color: 'var(--accent-color)' }}>15+</h3>
-                <p className="text-sm sm:text-base" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Projects completed</p>
+                <h3 className="text-xl sm:text-2xl font-bold" style={{ color: 'var(--accent-color)' }}>2+</h3>
+                <p className="text-sm sm:text-base" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Internships</p>
               </div>
               <div className="text-center p-3 sm:p-4 shadow-md rounded-lg" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
                 <h3 className="text-xl sm:text-2xl font-bold" style={{ color: 'var(--accent-color)' }}>3+</h3>
-                <p className="text-sm sm:text-base" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Companies worked</p>
+                <p className="text-sm sm:text-base" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Major Projects</p>
+              </div>
+              <div className="text-center p-3 sm:p-4 shadow-md rounded-lg" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
+                <h3 className="text-xl sm:text-2xl font-bold" style={{ color: 'var(--accent-color)' }}>2026</h3>
+                <p className="text-sm sm:text-base" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Graduation Year</p>
               </div>
             </div>
             

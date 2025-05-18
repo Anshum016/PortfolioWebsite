@@ -1,4 +1,6 @@
 import React from 'react';
+import profileImage from '/ImageAnshum2.jpg';
+
 
 const Home = () => {
   return (
@@ -6,15 +8,15 @@ const Home = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-10 lg:gap-16">
           {/* Left side - Text */}
-          <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-4 lg:pr-8 order-2 md:order-1 mt-8 sm:mt-0">
+          <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-4 lg:pr-8 order-1 md:order-1 mt-8 sm:mt-0 md:ml-16 lg:ml-24">
             <div>
               <p className="text-xl sm:text-2xl font-medium mb-2" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Hi, I am</p>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4" style={{ color: 'white' }}>Anshum Jani</h1>
               <div className="h-1 w-24 mb-6" style={{ backgroundColor: 'var(--accent-color)' }}></div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-6" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Web Developer</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-6" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>AI/ML & Front-End Developer</h2>
               <p className="text-base sm:text-lg max-w-lg mb-6 sm:mb-8" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-                I have a passion for building intuitive, user-friendly interfaces that provide 
-                an enjoyable and seamless user experience.
+                Passionate about AI/ML and web development, specializing in Computer Vision, NLP, and building 
+                modern web applications with React and Node.js.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a 
@@ -47,7 +49,7 @@ const Home = () => {
           </div>
 
           {/* Right side - Profile Photo */}
-          <div className="w-full md:w-1/2 flex justify-center items-center order-1 md:order-2 mt-16 md:mt-0">
+          <div className="w-full md:w-1/2 flex justify-center items-center order-2 md:order-2 mt-8 md:mt-0">
             <div className="relative w-full max-w-sm">
               {/* Main photo container */}
               <div 
@@ -59,13 +61,9 @@ const Home = () => {
               >
                 {/* Profile image */}
                 <img 
-                  src="/ProfileAnshumwithoutbg.png" 
+                  src={profileImage}
                   alt="Anshum Jani" 
                   className="w-full h-full object-cover object-center"
-                  style={{ 
-                    mixBlendMode: 'multiply', 
-                    backgroundColor: 'transparent'
-                  }}
                 />
               </div>
 

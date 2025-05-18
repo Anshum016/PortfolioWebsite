@@ -1,32 +1,33 @@
 import React from 'react'
+import { RiExternalLinkLine, RiMailSendLine } from 'react-icons/ri'
 
 const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: 'Chat Application',
-      description: 'Chat app created using react, firebase and chat-engine.',
+      title: 'WorkForceAI',
+      description: 'AI-powered workforce management platform built with Flask, featuring GitHub repository summarization, stock price prediction, and dynamic tool deployment using RAG, Vector Databases, and AI Agents.',
       image: '/project1.jpg',
       demoLink: '#'
     },
     {
       id: 2,
-      title: 'Track service request graph',
-      description: 'Service request graph to show various stages of bidirectional progress.',
+      title: 'Computer Vision Projects',
+      description: 'Multiple computer vision models including yoga pose classification using CNNs, medical image segmentation, and object detection on COCO dataset using PyTorch and OpenCV.',
       image: '/project2.jpg',
       demoLink: '#'
     },
     {
       id: 3,
-      title: 'Stop-watch',
-      description: 'Light weight Stop-Watch application using React without external libraries/dependencies.',
+      title: 'AVB Shipping and Logistic',
+      description: 'Full-stack website developed with React.js, Tailwind CSS, Express.js, and MongoDB, featuring responsive design and optimized performance.',
       image: '/project3.jpg',
       demoLink: '#'
     },
     {
       id: 4,
-      title: 'File reader',
-      description: 'Light weight file reader React component without external libraries/dependencies.',
+      title: 'AI/ML Research Projects',
+      description: 'Research projects at Tinkering Hub focusing on AI Agents, CNNs, Generative AI, and NLP using TensorFlow, PyTorch, and LangChain.',
       image: '/project4.jpg',
       demoLink: '#'
     }
@@ -50,7 +51,7 @@ const Portfolio = () => {
                 <p className="mb-4" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>{project.description}</p>
                 <a 
                   href={project.demoLink} 
-                  className="inline-block px-4 py-2 rounded-lg transition-colors font-medium"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-colors font-medium"
                   style={{ 
                     backgroundColor: 'var(--accent-color)', 
                     color: 'white',
@@ -59,6 +60,7 @@ const Portfolio = () => {
                   onMouseOver={e => e.currentTarget.style.backgroundColor = '#3451d1'} 
                   onMouseOut={e => e.currentTarget.style.backgroundColor = 'var(--accent-color)'}
                 >
+                  <RiExternalLinkLine className="w-4 h-4" />
                   Demo
                 </a>
               </div>
@@ -74,7 +76,7 @@ const Portfolio = () => {
           </p>
           <a 
             href="#contact" 
-            className="inline-block px-6 py-3 rounded-lg transition-colors font-medium"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-colors font-medium"
             style={{ 
               backgroundColor: 'var(--accent-color)', 
               color: 'white',
@@ -83,6 +85,7 @@ const Portfolio = () => {
             onMouseOver={e => e.currentTarget.style.backgroundColor = '#3451d1'} 
             onMouseOut={e => e.currentTarget.style.backgroundColor = 'var(--accent-color)'}
           >
+            <RiMailSendLine className="w-5 h-5" />
             Contact Me
           </a>
         </div>
