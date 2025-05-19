@@ -24,10 +24,9 @@ const About = () => {
         
         <div className="flex flex-col md:flex-row items-center md:items-start gap-16 md:gap-24 lg:gap-32">
           <div className="w-full md:w-1/3 mb-16 md:mb-0">
-            <div className="rounded-xl w-full max-w-xs mx-auto h-64 sm:h-80 overflow-hidden shadow-lg flex items-center justify-center transform hover:scale-105 transition-transform duration-300" 
+            <div className="w-full max-w-xs mx-auto h-64 sm:h-80 overflow-hidden flex items-center justify-center transform hover:scale-105 transition-transform duration-300" 
               style={{ 
-                backgroundColor: 'rgba(25, 22, 39, 0.5)',
-                boxShadow: '0 8px 32px rgba(67, 97, 238, 0.2)'
+                backgroundColor: 'rgba(25, 22, 39, 0.5)'
               }}
             >
               <Lottie 

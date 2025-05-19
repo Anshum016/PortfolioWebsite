@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaRobot, FaCode, FaBrain, FaPalette } from 'react-icons/fa'
+import { FaRobot, FaCode, FaPalette } from 'react-icons/fa'
 
 const Services = () => {
   const [activeModal, setActiveModal] = useState(null);
@@ -29,17 +29,6 @@ const Services = () => {
     },
     {
       id: 3,
-      title: 'AI Research',
-      icon: <FaBrain />,
-      details: [
-        'Research in AI Agents and Neural Networks',
-        'Implementing advanced AI techniques',
-        'Working with Generative AI models',
-        'Developing custom AI solutions'
-      ]
-    },
-    {
-      id: 4,
       title: 'UI/UX Design',
       icon: <FaPalette />,
       details: [
@@ -67,12 +56,17 @@ const Services = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div key={service.id} className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center text-center" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
-              <div className="text-4xl mb-4">{service.icon}</div>
+            <div key={service.id} className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300" 
+              style={{ 
+                backgroundColor: 'rgba(25, 22, 39, 0.5)',
+                boxShadow: '0 4px 20px rgba(67, 97, 238, 0.15)'
+              }}
+            >
+              <div className="text-4xl mb-4" style={{ color: 'var(--accent-color)' }}>{service.icon}</div>
               <h3 className="text-xl font-semibold mb-4" style={{ color: 'white' }}>{service.title}</h3>
               <button 
                 onClick={() => openModal(service.id)}
-                className="font-medium hover:text-blue-800 transition-colors"
+                className="font-medium hover:text-blue-400 transition-colors"
                 style={{ color: 'var(--accent-color)' }}
               >
                 View More
@@ -80,30 +74,25 @@ const Services = () => {
               
               {/* Modal */}
               {activeModal === service.id && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4">
-                  <div className="bg-white rounded-xl p-8 max-w-md w-full" style={{ backgroundColor: 'rgba(25, 22, 39, 0.9)' }}>
-                    <h4 className="text-2xl font-semibold mb-4" style={{ color: 'white' }}>{service.title}</h4>
-                    <ul className="mb-6">
+                <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+                  <div className="bg-white rounded-xl p-6 max-w-lg w-full mx-4 relative" style={{ backgroundColor: 'rgba(25, 22, 39, 0.95)' }}>
+                    <button 
+                      onClick={closeModal}
+                      className="absolute top-4 right-4 text-white p-2 rounded-full hover:bg-white hover:bg-opacity-10 transition-colors"
+                    >
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                    <h3 className="text-2xl font-bold mb-4" style={{ color: 'white' }}>{service.title}</h3>
+                    <ul className="space-y-3">
                       {service.details.map((detail, index) => (
-                        <li key={index} className="flex items-start mb-3">
-                          <div className="mr-2 text-blue-600">•</div>
-                          <p style={{ color: 'rgba(255, 255, 255, 0.9)' }}>{detail}</p>
+                        <li key={index} className="flex items-start">
+                          <span className="text-blue-400 mr-2">•</span>
+                          <span style={{ color: 'rgba(255, 255, 255, 0.9)' }}>{detail}</span>
                         </li>
                       ))}
                     </ul>
-                    <button 
-                      onClick={closeModal}
-                      className="px-6 py-2 rounded-lg transition-colors font-medium"
-                      style={{ 
-                        backgroundColor: 'var(--accent-color)', 
-                        color: 'white',
-                        boxShadow: '0 4px 15px rgba(67, 97, 238, 0.3)'
-                      }}
-                      onMouseOver={e => e.currentTarget.style.backgroundColor = '#3451d1'} 
-                      onMouseOut={e => e.currentTarget.style.backgroundColor = 'var(--accent-color)'}
-                    >
-                      Close
-                    </button>
                   </div>
                 </div>
               )}

@@ -7,6 +7,7 @@ import Services from './Components/Services'
 import Portfolio from './Components/Portfolio'
 import VideoProjects from './Components/VideoProjects'
 import Contactme from './Components/Contactme'
+import ScrollToTop from './Components/ScrollToTop'
 import { FaGithub } from 'react-icons/fa'
 import './App.css'
 
@@ -64,23 +65,23 @@ const App = () => {
           <Portfolio />
           <WaveDivider fillColor="var(--bg-color-secondary)" />
         </section>
+
+        {/* Videos Section - Immediately after Projects */}
+        <section id="videos" className="relative" style={{ backgroundColor: 'var(--bg-color-primary)' }}>
+          <VideoProjects />
+          <TriangleDivider fillColor="var(--bg-color-secondary)" />
+        </section>
         
         {/* Skills Section */}
         <section id="skills" className="relative">
           <Skills />
-          <TiltDivider fillColor="var(--bg-color-secondary)" />
+          <TiltDivider fillColor="var(--bg-color-primary)" />
         </section>
         
         {/* Services Section */}
         <section id="services" className="relative">
           <Services />
-          <CurveDivider fillColor="var(--bg-color-primary)" />
-        </section>
-
-        {/* Videos Section */}
-        <section id="videos" className="relative">
-          <VideoProjects />
-          <TriangleDivider fillColor="var(--bg-color-primary)" />
+          <CurveDivider fillColor="var(--bg-color-secondary)" />
         </section>
         
         {/* Contact Section */}
@@ -94,7 +95,7 @@ const App = () => {
             <h2 className="text-2xl font-bold mb-3 sm:mb-4" style={{ color: 'var(--accent-color)' }}>Anshum</h2>
             <p className="mb-4 sm:mb-6 text-sm sm:text-base" style={{ color: 'white' }}>AI/ML & Front-End Developer</p>
             
-            {/* Navigation Links */}
+            {/* Navigation Links - Updated order */}
             <div className="flex flex-wrap justify-center items-center mb-6 sm:mb-8">
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 w-full max-w-2xl mx-auto">
                 <a 
@@ -103,6 +104,13 @@ const App = () => {
                   style={{ color: 'white' }}
                 >
                   Projects
+                </a>
+                <a 
+                  href="#videos" 
+                  className="text-sm sm:text-base hover:text-blue-600 transition-colors whitespace-nowrap" 
+                  style={{ color: 'white' }}
+                >
+                  Videos
                 </a>
                 <a 
                   href="#skills" 
@@ -117,13 +125,6 @@ const App = () => {
                   style={{ color: 'white' }}
                 >
                   Services
-                </a>
-                <a 
-                  href="#videos" 
-                  className="text-sm sm:text-base hover:text-blue-600 transition-colors whitespace-nowrap" 
-                  style={{ color: 'white' }}
-                >
-                  Videos
                 </a>
                 <a 
                   href="#contact" 
@@ -149,6 +150,7 @@ const App = () => {
           </div>
         </footer>
       </div>
+      <ScrollToTop />
     </div>
   )
 }
