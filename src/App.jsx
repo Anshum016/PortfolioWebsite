@@ -47,61 +47,105 @@ const App = () => {
     <div className="relative">
       <Navbar />
       <div className="main-container">
+        {/* Home Section */}
         <section id="home" className="relative">
           <Home />
           <WaveDivider fillColor="var(--bg-color-secondary)" />
         </section>
         
+        {/* About Section */}
         <section id="about" className="relative">
           <About />
           <TriangleDivider fillColor="var(--bg-color-primary)" />
         </section>
 
+        {/* Projects Section */}
         <section id="portfolio" className="relative">
           <Portfolio />
           <WaveDivider fillColor="var(--bg-color-secondary)" />
         </section>
-
-        <section id="videos" className="relative">
-          <VideoProjects />
-          <TriangleDivider fillColor="var(--bg-color-primary)" />
-        </section>
         
+        {/* Skills Section */}
         <section id="skills" className="relative">
           <Skills />
           <TiltDivider fillColor="var(--bg-color-secondary)" />
         </section>
         
+        {/* Services Section */}
         <section id="services" className="relative">
           <Services />
           <CurveDivider fillColor="var(--bg-color-primary)" />
         </section>
+
+        {/* Videos Section */}
+        <section id="videos" className="relative">
+          <VideoProjects />
+          <TriangleDivider fillColor="var(--bg-color-primary)" />
+        </section>
         
+        {/* Contact Section */}
         <section id="contact" className="relative">
           <Contactme />
         </section>
         
+        {/* Footer */}
         <footer className="relative py-8 text-center" style={{ backgroundColor: 'var(--bg-color-primary)' }}>
-          <div className="container mx-auto px-6">
-            <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--accent-color)' }}>Anshum</h2>
-            <p className="mb-6" style={{ color: 'white' }}>AI/ML & Front-End Developer</p>
-            <div className="flex justify-center gap-6 mb-8">
-              <a href="#services" className="hover:text-blue-600" style={{ color: 'white' }}>Services</a>
-              <a href="#portfolio" className="hover:text-blue-600" style={{ color: 'white' }}>Projects</a>
-              <a href="#videos" className="hover:text-blue-600" style={{ color: 'white' }}>Videos</a>
-              <a href="#contact" className="hover:text-blue-600" style={{ color: 'white' }}>Contact Me</a>
-              <a 
-                href="https://github.com/Anshum016" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="flex items-center gap-2 hover:text-blue-600" 
-                style={{ color: 'white' }}
-              >
-                <FaGithub className="w-5 h-5" />
-                GitHub
-              </a>
+          <div className="container mx-auto px-4 sm:px-6">
+            <h2 className="text-2xl font-bold mb-3 sm:mb-4" style={{ color: 'var(--accent-color)' }}>Anshum</h2>
+            <p className="mb-4 sm:mb-6 text-sm sm:text-base" style={{ color: 'white' }}>AI/ML & Front-End Developer</p>
+            
+            {/* Navigation Links */}
+            <div className="flex flex-wrap justify-center items-center mb-6 sm:mb-8">
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 w-full max-w-2xl mx-auto">
+                <a 
+                  href="#portfolio" 
+                  className="text-sm sm:text-base hover:text-blue-600 transition-colors whitespace-nowrap" 
+                  style={{ color: 'white' }}
+                >
+                  Projects
+                </a>
+                <a 
+                  href="#skills" 
+                  className="text-sm sm:text-base hover:text-blue-600 transition-colors whitespace-nowrap" 
+                  style={{ color: 'white' }}
+                >
+                  Skills
+                </a>
+                <a 
+                  href="#services" 
+                  className="text-sm sm:text-base hover:text-blue-600 transition-colors whitespace-nowrap" 
+                  style={{ color: 'white' }}
+                >
+                  Services
+                </a>
+                <a 
+                  href="#videos" 
+                  className="text-sm sm:text-base hover:text-blue-600 transition-colors whitespace-nowrap" 
+                  style={{ color: 'white' }}
+                >
+                  Videos
+                </a>
+                <a 
+                  href="#contact" 
+                  className="text-sm sm:text-base hover:text-blue-600 transition-colors whitespace-nowrap" 
+                  style={{ color: 'white' }}
+                >
+                  Contact Me
+                </a>
+                <a 
+                  href="https://github.com/Anshum016" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base hover:text-blue-600 transition-colors whitespace-nowrap" 
+                  style={{ color: 'white' }}
+                >
+                  <FaGithub className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                  <span>GitHub</span>
+                </a>
+              </div>
             </div>
-            <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>© Anshum Jani. All rights reserved.</p>
+
+            <p className="text-xs sm:text-sm" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>© Anshum Jani. All rights reserved.</p>
           </div>
         </footer>
       </div>

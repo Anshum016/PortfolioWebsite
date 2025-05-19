@@ -1,13 +1,15 @@
-import React from 'react'
-import { RiExternalLinkLine, RiMailSendLine } from 'react-icons/ri'
+import React, { useState } from 'react'
+import { RiExternalLinkLine, RiMailSendLine, RiCloseLine } from 'react-icons/ri'
 
 const Portfolio = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   const projects = [
     {
       id: 1,
       title: 'WorkForceAI',
       description: 'AI-powered workforce management platform built with Flask, featuring GitHub repository summarization, stock price prediction, and dynamic tool deployment using RAG, Vector Databases, and AI Agents.',
-      image: '/project1.jpg',
+      images: ['/WorkForceAI.jpeg', '/WorkForceDashboard.jpeg'],
       demoLink: '#'
     },
     {
@@ -21,17 +23,18 @@ const Portfolio = () => {
       id: 3,
       title: 'AVB Shipping and Logistic',
       description: 'Full-stack website developed with React.js, Tailwind CSS, Express.js, and MongoDB, featuring responsive design and optimized performance.',
-      image: '/project3.jpg',
-      demoLink: '#'
-    },
-    {
-      id: 4,
-      title: 'AI/ML Research Projects',
-      description: 'Research projects at Tinkering Hub focusing on AI Agents, CNNs, Generative AI, and NLP using TensorFlow, PyTorch, and LangChain.',
-      image: '/project4.jpg',
+      images: ['/AVBShipping1.png', '/AVBShipping2.png', '/AVBShipping3.png'],
       demoLink: '#'
     }
   ];
+
+  const openGallery = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeGallery = () => {
+    setSelectedProject(null);
+  };
 
   return (
     <div className="min-h-screen pt-24 pb-36 px-6">
@@ -42,9 +45,25 @@ const Portfolio = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
             <div key={project.id} className="bg-white shadow-lg rounded-xl overflow-hidden" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
-              <div className="h-48 bg-gray-200 flex items-center justify-center" style={{ backgroundColor: 'rgba(25, 22, 39, 0.3)' }}>
-                {/* Placeholder for project image */}
-                <p className="text-gray-500" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Project Image</p>
+              <div 
+                className="h-48 bg-gray-200 flex items-center justify-center cursor-pointer relative group" 
+                style={{ backgroundColor: 'rgba(25, 22, 39, 0.3)' }}
+                onClick={() => project.images && openGallery(project)}
+              >
+                {project.images ? (
+                  <>
+                    <img 
+                      src={project.images[0]} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <p className="text-white font-medium">Click to view gallery</p>
+                    </div>
+                  </>
+                ) : (
+                  <p className="text-gray-500" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>Project Image</p>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2" style={{ color: 'white' }}>{project.title}</h3>
@@ -67,6 +86,31 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
+
+        {/* Image Gallery Modal */}
+        {selectedProject && (
+          <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+            <button 
+              onClick={closeGallery}
+              className="absolute top-4 right-4 text-white p-2 rounded-full hover:bg-white hover:bg-opacity-10 transition-colors"
+            >
+              <RiCloseLine className="w-6 h-6" />
+            </button>
+            <div className="max-w-4xl w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {selectedProject.images.map((image, index) => (
+                  <div key={index} className="relative">
+                    <img 
+                      src={image} 
+                      alt={`${selectedProject.title} - Image ${index + 1}`}
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
         
         <div className="mt-16 text-center bg-white shadow-lg rounded-xl p-8" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
           <h3 className="text-2xl font-bold mb-4" style={{ color: 'white' }}>You have a new project?</h3>
