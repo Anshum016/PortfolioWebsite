@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
+import { HiMenu } from 'react-icons/hi'
+import { RiCloseLine } from 'react-icons/ri'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -67,9 +68,9 @@ const Navbar = () => {
           aria-label="Toggle navigation menu"
         >
           {isMenuOpen ? (
-            <RiCloseLine className="h-5 w-5 sm:h-6 sm:w-6" />
+            <RiCloseLine className="h-6 w-6" />
           ) : (
-            <RiMenu3Line className="h-5 w-5 sm:h-6 sm:w-6" />
+            <HiMenu className="h-6 w-6" />
           )}
         </button>
         
