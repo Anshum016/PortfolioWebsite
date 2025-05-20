@@ -3,7 +3,6 @@ import Navbar from './Components/Navbar'
 import Home from './Components/HomeComponent'
 import About from './Components/About'
 import Skills from './Components/Skills'
-import Services from './Components/Services'
 import Portfolio from './Components/Portfolio'
 import VideoProjects from './Components/VideoProjects'
 import Contactme from './Components/Contactme'
@@ -78,12 +77,6 @@ const App = () => {
           <TiltDivider fillColor="var(--bg-color-primary)" />
         </section>
         
-        {/* Services Section */}
-        <section id="services" className="relative">
-          <Services />
-          <CurveDivider fillColor="var(--bg-color-secondary)" />
-        </section>
-        
         {/* Contact Section */}
         <section id="contact" className="relative">
           <Contactme />
@@ -120,28 +113,11 @@ const App = () => {
                   Skills
                 </a>
                 <a 
-                  href="#services" 
-                  className="text-sm sm:text-base hover:text-blue-600 transition-colors whitespace-nowrap" 
-                  style={{ color: 'white' }}
-                >
-                  Services
-                </a>
-                <a 
                   href="#contact" 
                   className="text-sm sm:text-base hover:text-blue-600 transition-colors whitespace-nowrap" 
                   style={{ color: 'white' }}
                 >
-                  Contact Me
-                </a>
-                <a 
-                  href="https://github.com/Anshum016" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base hover:text-blue-600 transition-colors whitespace-nowrap" 
-                  style={{ color: 'white' }}
-                >
-                  <FaGithub className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                  <span>GitHub</span>
+                  Contact
                 </a>
               </div>
             </div>

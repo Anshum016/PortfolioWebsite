@@ -37,7 +37,7 @@ body {
 }
 
 /* Section transitions */
-#home, #about, #skills, #services, #portfolio, #contact {
+#home, #about, #skills, #portfolio, #contact {
   transition: background-color 0.3s ease;
   position: relative;
   overflow: hidden; /* Added for shape dividers */
@@ -45,22 +45,22 @@ body {
 }
 
 /* Apply padding to all sections (except home which is handled individually) */
-#skills, #services, #portfolio, #contact {
+#skills, #portfolio, #contact {
   padding-top: 28px;
 }
 
 @media (min-width: 640px) {
-  #home, #about, #skills, #services, #portfolio, #contact {
+  #home, #about, #skills, #portfolio, #contact {
     padding-bottom: 70px;
   }
   
-  #skills, #services, #portfolio, #contact {
+  #skills, #portfolio, #contact {
     padding-top: 24px;
   }
 }
 
 @media (min-width: 1024px) {
-  #home, #about, #skills, #services, #portfolio, #contact {
+  #home, #about, #skills, #portfolio, #contact {
     padding-bottom: 90px;
   }
 }
@@ -181,9 +181,8 @@ body {
 
 /* Section dividers (removed old ones) */
 #about::before,
-#services::before,
-#contact::before,
 #skills::before,
+#contact::before,
 #portfolio::before,
 footer::before {
   content: none;

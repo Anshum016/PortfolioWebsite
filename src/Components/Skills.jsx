@@ -43,6 +43,26 @@ const Skills = () => {
         <p className="text-center mb-12" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>My technical expertise</p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* AI/ML Skills */}
+          <div className="bg-white shadow-lg rounded-xl p-6" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
+            <h3 className="text-xl font-semibold mb-6 text-center" style={{ color: 'white' }}>AI/ML Development</h3>
+            <div className="grid grid-cols-2 gap-8">
+              {aiSkills.map((skill, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-2 text-xl"
+                    style={{ 
+                      backgroundColor: 'rgba(67, 97, 238, 0.1)',
+                      color: 'var(--accent-color)'
+                    }}
+                  >
+                    {skill.icon}
+                  </div>
+                  <p className="font-medium" style={{ color: 'white' }}>{skill.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Frontend Skills */}
           <div className="bg-white shadow-lg rounded-xl p-6" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
             <h3 className="text-xl font-semibold mb-6 text-center" style={{ color: 'white' }}>Frontend Development</h3>
@@ -68,26 +88,6 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 text-center" style={{ color: 'white' }}>Backend Development</h3>
             <div className="grid grid-cols-2 gap-8">
               {backendSkills.map((skill, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-2 text-xl"
-                    style={{ 
-                      backgroundColor: 'rgba(67, 97, 238, 0.1)',
-                      color: 'var(--accent-color)'
-                    }}
-                  >
-                    {skill.icon}
-                  </div>
-                  <p className="font-medium" style={{ color: 'white' }}>{skill.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* AI/ML Skills */}
-          <div className="bg-white shadow-lg rounded-xl p-6" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
-            <h3 className="text-xl font-semibold mb-6 text-center" style={{ color: 'white' }}>AI/ML Development</h3>
-            <div className="grid grid-cols-2 gap-8">
-              {aiSkills.map((skill, index) => (
                 <div key={index} className="flex flex-col items-center">
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mb-2 text-xl"
                     style={{ 
