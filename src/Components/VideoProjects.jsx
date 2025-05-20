@@ -13,11 +13,13 @@ const VideoProjects = () => {
           <div className="bg-opacity-50 rounded-xl overflow-hidden shadow-lg" style={{ backgroundColor: 'rgba(25, 22, 39, 0.5)' }}>
             <div className="aspect-video w-full">
               <video 
-                controls 
+                controls
                 className="w-full h-full object-cover"
                 poster="/Thumbnail1.png"
+                muted
+                autoPlay
               >
-                <source src="/github-summarizer.mp4" type="video/mp4" />
+                <source src="/GithubrepoSummarizer.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

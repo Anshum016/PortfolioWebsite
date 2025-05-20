@@ -25,7 +25,7 @@ const About = () => {
         
         <div className="flex flex-col md:flex-row items-center md:items-start gap-16 md:gap-24 lg:gap-32">
           <div className="w-full md:w-1/3 mb-16 md:mb-0">
-            <div className="w-full max-w-xs mx-auto h-64 sm:h-80 overflow-hidden flex items-center justify-center transform hover:scale-105 transition-transform duration-300" 
+            <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] mx-auto h-[280px] sm:h-[320px] md:h-[360px] flex items-center justify-center transform transition-transform duration-300" 
               style={{ 
                 backgroundColor: 'rgba(25, 22, 39, 0.5)'
               }}
@@ -33,7 +33,8 @@ const About = () => {
               <Lottie 
                 animationData={animationData}
                 loop={true}
-                style={{ width: '100%', height: '100%' }}
+                className="w-[150%] sm:w-[180%] md:w-[200%] h-[150%] sm:h-[180%] md:h-[200%] -m-[25%] sm:-m-[40%] md:-m-[50%]"
+                style={{ position: 'relative', zIndex: 1 }}
               />
             </div>
           </div>
