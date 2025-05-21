@@ -59,16 +59,16 @@ const App = () => {
           <TriangleDivider fillColor="var(--bg-color-primary)" />
         </section>
 
-        {/* Projects Section */}
-        <section id="portfolio" className="relative">
-          <Portfolio />
+        {/* Videos Section - Now before Projects */}
+        <section id="videos" className="relative" style={{ backgroundColor: 'var(--bg-color-primary)' }}>
+          <VideoProjects />
           <WaveDivider fillColor="var(--bg-color-secondary)" />
         </section>
 
-        {/* Videos Section - Immediately after Projects */}
-        <section id="videos" className="relative" style={{ backgroundColor: 'var(--bg-color-primary)' }}>
-          <VideoProjects />
-          <TriangleDivider fillColor="var(--bg-color-secondary)" />
+        {/* Projects Section */}
+        <section id="portfolio" className="relative">
+          <Portfolio />
+          <TriangleDivider fillColor="var(--bg-color-primary)" />
         </section>
         
         {/* Skills Section */}
@@ -85,7 +85,7 @@ const App = () => {
         {/* Footer */}
         <footer className="relative py-8 text-center" style={{ backgroundColor: 'var(--bg-color-primary)' }}>
           <div className="container mx-auto px-4 sm:px-6">
-            <h2 className="text-2xl font-bold mb-3 sm:mb-4" style={{ color: 'var(--accent-color)' }}>Anshum</h2>
+            <h2 className="text-2xl font-bold mb-3 sm:mb-4" style={{ color: 'var(--accent-color)' }}>Anshum Jani</h2>
             <p className="mb-4 sm:mb-6 text-sm sm:text-base" style={{ color: 'white' }}>AI/ML & Front-End Developer</p>
             
             {/* Navigation Links - Updated order */}

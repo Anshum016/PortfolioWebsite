@@ -10,21 +10,25 @@ const Portfolio = () => {
       title: 'WorkForceAI',
       description: 'AI-powered workforce management platform built with Flask, featuring GitHub repository summarization, stock price prediction, and dynamic tool deployment using RAG, Vector Databases, and AI Agents.',
       images: ['/WorkForceAI.jpeg', '/WorkForceDashboard.jpeg'],
-      demoLink: '#'
+      demoLink: 'https://github.com/Anshum016/WorkForceAI'
     },
     {
       id: 2,
       title: 'Computer Vision Projects',
-      description: 'Multiple computer vision models including yoga pose classification using CNNs, medical image segmentation, and object detection on COCO dataset using PyTorch and OpenCV.',
-      image: '/project2.jpg',
-      demoLink: '#'
+      description: 'Advanced computer vision projects including object detection on COCO dataset using PyTorch, implementing custom architectures, and data loading pipelines. Features include real-time object detection, model training, and evaluation.',
+      images: [
+        '/Object_Detection_Architecture.jpeg',
+        '/Object_Detection_Data_Loading.jpeg',
+        '/Object_Detecction_Model.jpeg'
+      ],
+      demoLink: 'https://github.com/Anshum016/Computer-Vision-Projects'
     },
     {
       id: 3,
       title: 'AVB Shipping and Logistic',
       description: 'Full-stack website developed with React.js, Tailwind CSS, Express.js, and MongoDB, featuring responsive design and optimized performance.',
       images: ['/AVBShipping1.png', '/AVBShipping2.png', '/AVBShipping3.png'],
-      demoLink: '#'
+      demoLink: 'https://github.com/Anshum016/AVB-Shipping'
     }
   ];
 
@@ -70,6 +74,8 @@ const Portfolio = () => {
                 <p className="mb-4" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>{project.description}</p>
                 <a 
                   href={project.demoLink} 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-colors font-medium"
                   style={{ 
                     backgroundColor: 'var(--accent-color)', 
@@ -80,7 +86,7 @@ const Portfolio = () => {
                   onMouseOut={e => e.currentTarget.style.backgroundColor = 'var(--accent-color)'}
                 >
                   <RiExternalLinkLine className="w-4 h-4" />
-                  Demo
+                  View on GitHub
                 </a>
               </div>
             </div>
